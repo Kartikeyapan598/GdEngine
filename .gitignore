@@ -1,0 +1,9 @@
+#Directories
+bin/
+bin-int/
+
+#Files
+*.user
+
+#Visual studio files and folders
+.vs/
