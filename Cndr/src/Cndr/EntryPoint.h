@@ -2,6 +2,10 @@
 
 #include "Core.h"
 
+#include "Platform/Windows/PltWindows.h"
+
+class PltWindows;
+
 #ifdef CR_PLATFORM_WINDOWS
 
 extern Cndr::Application* Cndr::CreateApp();

@@ -4,7 +4,7 @@
 #if defined(_WIN64)
 	#include <Windows.h>
 	//#include interface for basic windows
-	#include "Interface/Window.h"
+	#include "Cndr/Interface/Window.h"
 #elif defined(_WIN32)
 	// include Windows.h file
 	#include <Windows.h>

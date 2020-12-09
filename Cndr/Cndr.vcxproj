@@ -11,20 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Cndr\Event\Event.h" />
     <ClInclude Include="src\Cndr\Log.h" />
     <ClInclude Include="src\CndrInclude.h" />
     <ClInclude Include="src\Cndr\Application.h" />
     <ClInclude Include="src\Cndr\Core.h" />
     <ClInclude Include="src\Cndr\EntryPoint.h" />
     <ClInclude Include="src\Cndr\Timed.h" />
-    <ClInclude Include="src\Interface\Window.h" />
+    <ClInclude Include="src\Cndr\Interface\RenderApi.h" />
+    <ClInclude Include="src\Cndr\Interface\Window.h" />
     <ClInclude Include="src\Platform\Platform.h" />
-    <ClInclude Include="src\Platform\PltWindows.h" />
+    <ClInclude Include="src\Platform\RenderPlatform.h" />
+    <ClInclude Include="src\Platform\Windows\PltWindows.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Cndr\Log.cpp" />
     <ClCompile Include="src\Cndr\Application.cpp" />
-    <ClCompile Include="src\Platform\PltWindows.cpp" />
+    <ClCompile Include="src\Platform\Windows\PltWindows.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Vendor\spdlog\LICENSE" />

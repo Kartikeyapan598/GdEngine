@@ -16,9 +16,10 @@ namespace Cndr
 		// ---- Contains Trigger files to run the application 
 
 		// Example the DirectX api Init, Update, Delete funtions
+		m_Window->Create();
 		while (m_running)
 		{
-			m_Window->Create();
+			m_Window->broadcast();
 		}
 	}
 

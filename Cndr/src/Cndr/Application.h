@@ -3,7 +3,7 @@
 #include "Core.h"
 
 #include <memory>
-#include "Platform/PltWindows.h"
+#include "Platform/Windows/PltWindows.h"
 
 int main(int argc, char** argv);
 
