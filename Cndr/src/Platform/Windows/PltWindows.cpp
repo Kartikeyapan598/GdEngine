@@ -33,7 +33,7 @@ namespace Cndr
 
 	Window* Window::Create(const WindowProperties& props)
 	{
-		return nullptr;//new PltWindows();
+		return new PltWindows(props);
 	}
 	
 	PltWindows::PltWindows(const WindowProperties& props)
@@ -76,71 +76,67 @@ namespace Cndr
 
 		if (!Window_init)
 		{
-			CR_CORE_INFO("Window created");
+			CR_CORE_INFO("Window_init is set to true \n");
 			Window_init = true;
 		}
+
 		WNDCLASSEX wc;
-
-		wc.lpszClassName = "Cndr";
-		wc.lpfnWndProc = &windowProc;
+		wc.cbClsExtra = NULL;
 		wc.cbSize = sizeof(WNDCLASSEX);
-		wc.style = 0;
-		wc.cbClsExtra = 0;
-		wc.hInstance = NULL; // Recheck
+		wc.cbWndExtra = NULL;
+		wc.hbrBackground = (HBRUSH)COLOR_WINDOW + 2;
+		wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-		wc.hCursor = LoadCursor(NULL, IDI_APPLICATION);
-		wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);   // (HBRUSH) CreateSolidBrush(RGB(10, 20, 30)); //
-		wc.lpszMenuName = NULL;
 		wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
-		
-		if (!RegisterClassEx(&wc))
-		{
-			CR_CORE_ERROR("Window Registration Failed");
+		wc.hInstance = NULL;
+		wc.lpszClassName = "MyWindowClass";
+		wc.lpszMenuName = "";
+		wc.style = NULL;
+		wc.lpfnWndProc = &windowProc;
+
+		if (!::RegisterClassEx(&wc)) // If the registration of class will fail, the function will return false
 			return false;
-		}
 
-		m_hwnd = CreateWindowExA(WS_EX_OVERLAPPEDWINDOW,
-			wc.lpszClassName,
-			m_Data.Title.c_str(), // c_str is funtion to convert std::string to LPSTR
-			WS_OVERLAPPEDWINDOW,
-			CW_USEDEFAULT,
-			CW_USEDEFAULT,
-			m_Data.Width,
-			m_Data.Height,
-			NULL,
-			NULL,
-			NULL,
-			NULL);
+		CR_CORE_INFO("Window Creation");
 
-		if (m_hwnd == NULL)
+		m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", m_Data.Title.c_str(), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, m_Data.Width, m_Data.Height,
+			NULL, NULL, NULL, this);
+
+		//if the creation fail return false
+		if (!m_hwnd)
 		{
-			CR_CORE_ERROR("HWND Creation Failed");
-			return - 1;
+			CR_CORE_ERROR("m_hwnd value error");
+			return false;
 		}
 
 		ShowWindow(m_hwnd, SW_SHOW);
 		UpdateWindow(m_hwnd);
-
-		//flag to show window is initialized
-		Window_init = true;
 
 		return true;
 	}
 
 	bool PltWindows::broadcast()
 	{
-		MSG msg;
+		MSG msg = { 0 };
 
-
-		while (::PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) > 0)
+		BOOL bRet = 1;
+		CR_CORE_INFO("Flag in Broadcast");
+		while ((bRet = GetMessage(&msg, 0, 0, 0)) != 0)
 		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
+			if (bRet == -1)
+			{
+				MessageBox(0, "GetMessage FAILED", "Error", MB_OK);
+				break;
+			}
+			else
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
 		}
+		OnUpdate();
 
-		Sleep(1);
-
-		return true;
+		return 0;//(int)msg.wParam;
 	}
 	
 }
