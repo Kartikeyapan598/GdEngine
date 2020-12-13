@@ -20,6 +20,7 @@ namespace Cndr
 		while (m_running)
 		{
 			m_Window->broadcast();
+			//m_Window->OnUpdate();
 		}
 	}
 

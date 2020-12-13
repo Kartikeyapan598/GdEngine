@@ -9,13 +9,23 @@ namespace Cndr
 		, UINT   msg     // Window Message  
 		, WPARAM wParam  // Additional message information
 		, LPARAM lParam  // Additional message information
-	) {
-
+	) 
+	{
 		// Process messages 
 		switch (msg)
 		{
+		//case WM_NCPAINT: // case to make change title bar and border of win application
+		//{
+		//	HDC hdc;
+		//	hdc = GetDCEx(hwnd, (HRGN)wParam, DCX_WINDOW | DCX_INTERSECTRGN);
+		//	// Paint into this DC 
+		//	ReleaseDC(hwnd, hdc);
+		//}
 		case WM_CREATE :
 			break;
+		case WM_LBUTTONDOWN:
+			MessageBox(0, "Edtr", "Cndr Engine", MB_OK);
+			return 0;
 		case WM_CLOSE :
 			DestroyWindow(hwnd);
 			break;
@@ -84,9 +94,9 @@ namespace Cndr
 		wc.cbClsExtra = NULL;
 		wc.cbSize = sizeof(WNDCLASSEX);
 		wc.cbWndExtra = NULL;
-		wc.hbrBackground = (HBRUSH)COLOR_WINDOW + 2;
+		wc.hbrBackground = CreateSolidBrush(RGB(80, 0, 80)); //(HBRUSH)GetStockObject(DKGRAY_BRUSH);;  COLOR_ACTIVEBORDER
 		wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-		wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+		wc.hIcon = LoadIcon(NULL, IDI_APPLICATION); //(HICON)LoadImageW(nullptr, L"res\\paddle.ico", IMAGE_ICON, 64, 64, LR_LOADFROMFILE);
 		wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 		wc.hInstance = NULL;
 		wc.lpszClassName = "MyWindowClass";
@@ -102,6 +112,9 @@ namespace Cndr
 		m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", m_Data.Title.c_str(), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, m_Data.Width, m_Data.Height,
 			NULL, NULL, NULL, this);
 
+		//m_hwnd = CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", 0, (WS_BORDER), 0, 0, m_Data.Width, m_Data.Height, NULL, NULL, NULL, NULL); //WS_BORDER removes border
+		//SetWindowLong(m_hwnd, GWL_STYLE, 0);
+		//SetWindowLong(m_hwnd, GWL_STYLE, WS_BORDER);
 		//if the creation fail return false
 		if (!m_hwnd)
 		{
@@ -134,7 +147,6 @@ namespace Cndr
 				DispatchMessage(&msg);
 			}
 		}
-		OnUpdate();
 
 		return 0;//(int)msg.wParam;
 	}
