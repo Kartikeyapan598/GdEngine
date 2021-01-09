@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Cndr\Renderer\Renderer.h" />
     <ClInclude Include="src\Cndr\Event\Event.h" />
     <ClInclude Include="src\Cndr\Log.h" />
     <ClInclude Include="src\CndrInclude.h" />
@@ -25,6 +26,7 @@
     <ClInclude Include="src\Platform\Windows\PltWindows.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Cndr\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Cndr\Log.cpp" />
     <ClCompile Include="src\Cndr\Application.cpp" />
     <ClCompile Include="src\Platform\Windows\PltWindows.cpp" />
@@ -86,6 +88,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -103,6 +106,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

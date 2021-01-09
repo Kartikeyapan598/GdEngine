@@ -3,6 +3,7 @@
 #include "../Platform.h"
 #include "Cndr/Log.h"
 #include "Cndr/Core.h"
+//#include "Cndr/Application.h"
 
 namespace Cndr
 {
@@ -12,20 +13,15 @@ namespace Cndr
 	public :
 		PltWindows(const WindowProperties& props);
 		virtual ~PltWindows();
-
-		void OnUpdate() override;
 		
-
 		// Inherited via Window
 		inline unsigned int Get_Width() const override { return m_Data.Width; }
-
 		virtual unsigned int Get_Height() const override { return m_Data.Height; }
-
 		virtual void Set_VSync(bool value) override;
-
 		virtual bool Is_VSync() const override;
 
 		virtual bool Init(const WindowProperties& props);
+		void OnUpdate() override;
 		bool broadcast();
 		virtual void Shutdown();
 
@@ -45,6 +41,7 @@ namespace Cndr
 	protected :
 
 		bool IsVSync;
+		//friend class Application;
 
 	};
 
