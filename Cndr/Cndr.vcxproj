@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Cndr\Interface\Thread.h" />
     <ClInclude Include="src\Cndr\Renderer\Renderer.h" />
     <ClInclude Include="src\Cndr\Event\Event.h" />
     <ClInclude Include="src\Cndr\Log.h" />

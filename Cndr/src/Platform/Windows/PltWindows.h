@@ -27,7 +27,7 @@ namespace Cndr
 
 	private :
 		
-		HWND m_hwnd;
+		HWND m_hwnd;   // create static m_hwnd of type HWND to be used in PltWindows and Renderer classess.
 
 		struct WindowData
 		{
