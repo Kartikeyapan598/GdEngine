@@ -1,3 +1,4 @@
+#include "Cndrpch.h"	
 #include "Application.h"
 
 namespace Cndr
@@ -9,7 +10,7 @@ namespace Cndr
 
 	Application::~Application()
 	{
-		//m_renderer->Release();
+		//m_renderer->Clear();
 	}
 
 	void Application::Run()

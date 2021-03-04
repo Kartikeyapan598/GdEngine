@@ -38,14 +38,8 @@ namespace Cndr
 		virtual void Join_on_ID(Thread& id);
 
 	private :
-
-		struct Thread_data
-		{
-			int ID;
-			Priority level = Priority::Normal;
-		};
-
-		Thread_data m_thread;
+		uint64_t ID;
+		Priority level = Priority::Normal; 
 
 	};
 }

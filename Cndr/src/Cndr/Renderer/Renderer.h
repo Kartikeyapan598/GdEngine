@@ -1,10 +1,15 @@
 #pragma once
 
+#include "Cndr/Interface/RenderApi.h"
+
+
+// Libs for DirectX 
 #include "Cndr/Log.h"
 #include <d3d11.h>
-
 #pragma comment(lib,"d3d11.lib")
-#include "Cndr/Interface/RenderApi.h"
+//
+
+
 /*
 #include "Platform/RenderPlatform.h" 
 */ 

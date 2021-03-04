@@ -1,3 +1,4 @@
+#include "Cndrpch.h"
 #include "PltWindows.h"
 
 namespace Cndr
@@ -94,7 +95,7 @@ namespace Cndr
 		wc.cbClsExtra = NULL;
 		wc.cbSize = sizeof(WNDCLASSEX);
 		wc.cbWndExtra = NULL;
-		wc.hbrBackground = CreateSolidBrush(RGB(80, 0, 80)); //(HBRUSH)GetStockObject(DKGRAY_BRUSH);;  COLOR_ACTIVEBORDER
+		wc.hbrBackground = CreateSolidBrush(RGB(0, 124, 0)); //(HBRUSH)GetStockObject(DKGRAY_BRUSH);;  COLOR_ACTIVEBORDER
 		wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wc.hIcon = LoadIcon(NULL, IDI_APPLICATION); //(HICON)LoadImageW(nullptr, L"res\\paddle.ico", IMAGE_ICON, 64, 64, LR_LOADFROMFILE);
 		wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
@@ -115,6 +116,8 @@ namespace Cndr
 		//m_hwnd = CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", 0, (WS_BORDER), 0, 0, m_Data.Width, m_Data.Height, NULL, NULL, NULL, NULL); //WS_BORDER removes border
 		//SetWindowLong(m_hwnd, GWL_STYLE, 0);
 		//SetWindowLong(m_hwnd, GWL_STYLE, WS_BORDER);
+
+
 		//if the creation fail return false
 		if (!m_hwnd)
 		{

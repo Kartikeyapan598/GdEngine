@@ -1,8 +1,6 @@
 #pragma once
 
 #include "../Platform.h"
-#include "Cndr/Log.h"
-#include "Cndr/Core.h"
 //#include "Cndr/Application.h"
 
 namespace Cndr

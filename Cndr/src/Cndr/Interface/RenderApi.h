@@ -27,6 +27,8 @@ namespace Cndr
 
 		//static Scope<RenderApi> Create();
 
+		RenderApi* GetRenderer(API m_api = API::DirectX);
+
 	private	:
 		static API m_api;
 	};

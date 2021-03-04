@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Cndr\Interface\Thread.h" />
+    <ClInclude Include="src\Cndrpch.h" />
     <ClInclude Include="src\Cndr\Renderer\Renderer.h" />
     <ClInclude Include="src\Cndr\Event\Event.h" />
     <ClInclude Include="src\Cndr\Log.h" />
@@ -27,6 +27,10 @@
     <ClInclude Include="src\Platform\Windows\PltWindows.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Cndrpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\Cndr\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Cndr\Log.cpp" />
     <ClCompile Include="src\Cndr\Application.cpp" />
@@ -85,6 +89,8 @@
       <PreprocessorDefinitions>CR_PLATFORM_WINDOWS;CR_BUILD_API</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\Cndr\Vendor\spdlog\include;$(SolutionDir)\Cndr\src</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Cndrpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -101,6 +107,8 @@
       <PreprocessorDefinitions>CR_PLATFORM_WINDOWS;CR_BUILD_API</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\Cndr\Vendor\spdlog\include;$(SolutionDir)\Cndr\src</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Cndrpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

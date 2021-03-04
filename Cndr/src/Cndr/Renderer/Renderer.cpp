@@ -1,8 +1,9 @@
+#include "Cndrpch.h"
 #include "Renderer.h"
 
 void Cndr::Renderer::Init()
 {
-	HRESULT res ;
+	HRESULT res = 0 ;
 
 	unsigned int createDeviceFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
 
@@ -20,11 +21,11 @@ void Cndr::Renderer::Init()
 	};
 	UINT num_driver_types = ARRAYSIZE(driver_types);
 
-	//D3D_FEATURE_LEVEL feature_levels[] =
-	//{
-	//	D3D_FEATURE_LEVEL_11_0
-	//};
-	//UINT num_feature_levels = ARRAYSIZE(feature_levels);
+	D3D_FEATURE_LEVEL feature_levels[] =
+	{
+		D3D_FEATURE_LEVEL_11_0
+	};
+	UINT num_feature_levels = ARRAYSIZE(feature_levels);
 
 	// Device Creation using D3D11CreateDevice
 

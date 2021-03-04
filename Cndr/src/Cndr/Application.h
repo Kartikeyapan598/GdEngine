@@ -1,10 +1,6 @@
 #pragma once
-
-#include "Core.h"
-
-#include <memory>
 #include "Platform/Windows/PltWindows.h"
-//#include "Renderer/DirectX/renderer_d3d12.h"
+#include "Renderer/Renderer.h"
 
 int main(int argc, char** argv);
 
@@ -27,8 +23,7 @@ namespace Cndr
 	private :
 		bool m_running = true;
 		std::unique_ptr<PltWindows> m_Window;
-		
-		//std::unique_ptr<D3D12> renderer;
+		//std::unique_ptr<Renderer> m_renderer;
 
 		friend int ::main(int argc, char** argv);
 	};
