@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cndrpch.h" />
+    <ClInclude Include="src\Cndr\Event\EventSystem.h" />
+    <ClInclude Include="src\Cndr\Event\Listener.h" />
     <ClInclude Include="src\Cndr\Renderer\Renderer.h" />
     <ClInclude Include="src\Cndr\Event\Event.h" />
     <ClInclude Include="src\Cndr\Log.h" />

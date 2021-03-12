@@ -23,8 +23,6 @@
 	#define CR_CORE_ASSERT(x, ...)
 #endif
 
-
-
 namespace Cndr
 {
 	template<typename T>
