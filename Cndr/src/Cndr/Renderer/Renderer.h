@@ -1,7 +1,6 @@
 #pragma once
 
-#include "Cndr/Interface/RenderApi.h"
-
+#include "Interface/RenderApi.h"
 
 // Libs for DirectX 
 #include "Cndr/Log.h"
@@ -10,14 +9,10 @@
 //
 
 
-/*
-#include "Platform/RenderPlatform.h" 
-*/ 
-
 namespace Cndr
 {
 
-	class Renderer //: public RenderApi
+	class CR_API Renderer : public RenderApi
 	{
 	public :
 

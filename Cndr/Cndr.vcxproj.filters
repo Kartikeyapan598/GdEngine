@@ -45,10 +45,10 @@
     <ClInclude Include="src\Cndr\Event\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cndr\Interface\RenderApi.h">
+    <ClInclude Include="src\Interface\RenderApi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cndr\Interface\Window.h">
+    <ClInclude Include="src\Interface\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Cndr\Renderer\Renderer.h">
@@ -78,6 +78,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Cndrpch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Interface\RenderApi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

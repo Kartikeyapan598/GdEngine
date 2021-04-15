@@ -1,9 +1,8 @@
 #pragma once
-
-#include "Core.h"
-
+#include "Cndrpch.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "Cndr/Core.h"
 
 namespace Cndr
 {

@@ -22,8 +22,8 @@
     <ClInclude Include="src\Cndr\Core.h" />
     <ClInclude Include="src\Cndr\EntryPoint.h" />
     <ClInclude Include="src\Cndr\Timed.h" />
-    <ClInclude Include="src\Cndr\Interface\RenderApi.h" />
-    <ClInclude Include="src\Cndr\Interface\Window.h" />
+    <ClInclude Include="src\Interface\RenderApi.h" />
+    <ClInclude Include="src\Interface\Window.h" />
     <ClInclude Include="src\Platform\Platform.h" />
     <ClInclude Include="src\Platform\RenderPlatform.h" />
     <ClInclude Include="src\Platform\Windows\PltWindows.h" />
@@ -33,6 +33,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Interface\RenderApi.cpp" />
     <ClCompile Include="src\Cndr\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Cndr\Log.cpp" />
     <ClCompile Include="src\Cndr\Application.cpp" />

@@ -2,13 +2,15 @@
 #include "Platform/Windows/PltWindows.h"
 #include "Renderer/Renderer.h"
 
+//class Renderer;
+
 int main(int argc, char** argv);
 
 namespace Cndr
 {
 
 	class CR_API Application
-	{
+	{ 
 	public :
 		Application();
 		virtual ~Application();
@@ -23,7 +25,7 @@ namespace Cndr
 	private :
 		bool m_running = true;
 		std::unique_ptr<PltWindows> m_Window;
-		//std::unique_ptr<Renderer> m_renderer;
+		std::unique_ptr<Renderer> m_renderer;
 
 		friend int ::main(int argc, char** argv);
 	};
