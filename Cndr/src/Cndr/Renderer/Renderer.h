@@ -3,7 +3,7 @@
 #include "Interface/RenderApi.h"
 
 // Libs for DirectX 
-#include "Cndr/Log.h"
+#include "Cndr/Core/Log.h"
 #include <d3d11.h>
 #pragma comment(lib,"d3d11.lib")
 //

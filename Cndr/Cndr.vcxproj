@@ -14,14 +14,15 @@
     <ClInclude Include="src\Cndrpch.h" />
     <ClInclude Include="src\Cndr\Event\EventSystem.h" />
     <ClInclude Include="src\Cndr\Event\Listener.h" />
+    <ClInclude Include="src\Cndr\Profiler\Instrumentor.h" />
     <ClInclude Include="src\Cndr\Renderer\Renderer.h" />
     <ClInclude Include="src\Cndr\Event\Event.h" />
-    <ClInclude Include="src\Cndr\Log.h" />
+    <ClInclude Include="src\Cndr\Core\Log.h" />
     <ClInclude Include="src\CndrInclude.h" />
-    <ClInclude Include="src\Cndr\Application.h" />
-    <ClInclude Include="src\Cndr\Core.h" />
-    <ClInclude Include="src\Cndr\EntryPoint.h" />
-    <ClInclude Include="src\Cndr\Timed.h" />
+    <ClInclude Include="src\Cndr\Core\Application.h" />
+    <ClInclude Include="src\Cndr\Core\Core.h" />
+    <ClInclude Include="src\Cndr\Core\EntryPoint.h" />
+    <ClInclude Include="src\Cndr\Core\Timed.h" />
     <ClInclude Include="src\Interface\RenderApi.h" />
     <ClInclude Include="src\Interface\Window.h" />
     <ClInclude Include="src\Platform\Platform.h" />
@@ -35,8 +36,8 @@
     </ClCompile>
     <ClCompile Include="src\Interface\RenderApi.cpp" />
     <ClCompile Include="src\Cndr\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Cndr\Log.cpp" />
-    <ClCompile Include="src\Cndr\Application.cpp" />
+    <ClCompile Include="src\Cndr\Core\Log.cpp" />
+    <ClCompile Include="src\Cndr\Core\Application.cpp" />
     <ClCompile Include="src\Platform\Windows\PltWindows.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +49,7 @@
     <ProjectGuid>{806425a3-e094-4bfc-bb45-549853187f9f}</ProjectGuid>
     <RootNamespace>Cndr</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Cndr</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

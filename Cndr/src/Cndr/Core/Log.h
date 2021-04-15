@@ -2,7 +2,7 @@
 #include "Cndrpch.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
-#include "Cndr/Core.h"
+#include "Core.h"
 
 namespace Cndr
 {

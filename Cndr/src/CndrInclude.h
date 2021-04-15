@@ -2,11 +2,11 @@
 
 // ----- For Client Application Use Only ----- //
 
-#include "Cndr/Application.h"
-#include "Cndr/Log.h"
+#include "Cndr/Core/Application.h"
+#include "Cndr/Core/Log.h"
 
 // ------------- Entry Point File -------------//
 
-#include "Cndr/EntryPoint.h"
+#include "Cndr/Core/EntryPoint.h"
 
 // --------------------------------------------//

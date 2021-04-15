@@ -35,9 +35,12 @@
 
 // Cndr Includes
 
-#include "Cndr/Core.h"
+#include "Cndr/Core/Core.h"
 #include "Platform/Platform.h"
-#include "Cndr/Log.h"
+#include "Cndr/Core/Log.h"
+
+// Cndr Instrumentor
+#include "Cndr/Profiler/Instrumentor.h"
 
 #ifndef ReleaseCom
 #define ReleaseCom(x) { if(x){ x->Release(); x = 0; } }

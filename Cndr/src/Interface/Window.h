@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cndr/Core.h"
+#include "Cndr/Core/Core.h"
 #include "string"
 namespace Cndr
 {
