@@ -1,50 +1,56 @@
+-- premake5.lua
+
 workspace "GdEngine"
 	architecture "x64"
 
-	configurations
-	{
+	configurations{
 		"Debug",
 		"Release"
 	}
 
+	startproject "Edtr"
+
+	flags{
+		"MultiProcessorCompile",
+		"FloatFast"
+	}
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "Cndr"
+project "GdEngine"
 	
-	location "Cndr"
+	location "GdEngine"
 	kind "SharedLib"
 	language "C++"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	files{
+		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs
-	{
+	includedirs{
 		"%{prj.name}/Vendor/spdlog/include",
 		"%{prj.name}/src/Interface",
 		"%{prj.name}/src"
 	}
+	
+	pchheader "Cndrpch.h"
+	pchsource "%{prj.name}/src/Cndrpch.cpp"
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
 		
-		defines
-		{
-			"CR_PLATFORM_WINDOWS",
-			"CR_BUILD_API",
-			"CR_ENABLE_ASSERTS"
+		defines{
+			"CR_PLATFORM_WINDOWS"
 		}
 
-		postbuildcommands
-		{
+		postbuildcommands{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Edtr")
 		}
 	
@@ -65,23 +71,20 @@ project "Edtr"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	files{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
 	dim = "%{prj.name}"
 
-	includedirs
-	{
-		"Cndr/Vendor/spdlog/include",
-		"Cndr/src"
+	includedirs{
+		"GdEngine/Vendor/spdlog/include",
+		"GdEngine/src"
 	}
 
-	links
-	{
-		"Cndr"
+	links{
+		"GdEngine"
 	}
 
 	filter "system:windows"
@@ -89,8 +92,7 @@ project "Edtr"
 		staticruntime "On"
 		systemversion "latest"
 		
-		defines
-		{
+		defines{
 			"CR_PLATFORM_WINDOWS"
 		}
 
