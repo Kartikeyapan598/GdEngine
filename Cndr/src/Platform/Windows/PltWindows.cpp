@@ -25,7 +25,7 @@ namespace Cndr
 		case WM_CREATE :
 			break;
 		case WM_LBUTTONDOWN:
-			MessageBox(0, "Edtr", "Cndr Engine", MB_OK);
+			MessageBox(0, L"Edtr", L"Cndr Engine", MB_OK);
 			return 0;
 		case WM_CLOSE :
 			DestroyWindow(hwnd);
@@ -100,8 +100,8 @@ namespace Cndr
 		wc.hIcon = LoadIcon(NULL, IDI_APPLICATION); //(HICON)LoadImageW(nullptr, L"res\\paddle.ico", IMAGE_ICON, 64, 64, LR_LOADFROMFILE);
 		wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 		wc.hInstance = NULL;
-		wc.lpszClassName = "MyWindowClass";
-		wc.lpszMenuName = "";
+		wc.lpszClassName = L"MyWindowClass";
+		wc.lpszMenuName = L"";
 		wc.style = NULL;
 		wc.lpfnWndProc = &windowProc;
 
@@ -110,7 +110,7 @@ namespace Cndr
 
 		CR_CORE_INFO("Window Creation");
 
-		m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", m_Data.Title.c_str(), WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, m_Data.Width, m_Data.Height,
+		m_hwnd = ::CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, L"MyWindowClass", L"m_Data.Title.c_str()", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, m_Data.Width, m_Data.Height,
 			NULL, NULL, NULL, this);
 
 		//m_hwnd = CreateWindowEx(WS_EX_OVERLAPPEDWINDOW, "MyWindowClass", 0, (WS_BORDER), 0, 0, m_Data.Width, m_Data.Height, NULL, NULL, NULL, NULL); //WS_BORDER removes border
@@ -141,7 +141,7 @@ namespace Cndr
 		{
 			if (bRet == -1)
 			{
-				MessageBox(0, "GetMessage FAILED", "Error", MB_OK);
+				MessageBox(0, L"GetMessage FAILED", L"Error", MB_OK);
 				break;
 			}
 			else
@@ -151,7 +151,7 @@ namespace Cndr
 			}
 		}
 
-		return 0;//(int)msg.wParam;
+		return (int)msg.wParam;
 	}
 	
 }

@@ -17,9 +17,9 @@ workspace "GdEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "GdEngine"
+project "Cndr"
 	
-	location "GdEngine"
+	location "Cndr"
 	kind "SharedLib"
 	language "C++"
 
@@ -47,7 +47,8 @@ project "GdEngine"
 		systemversion "latest"
 		
 		defines{
-			"CR_PLATFORM_WINDOWS"
+			"CR_PLATFORM_WINDOWS",
+			"CR_BUILD_API"
 		}
 
 		postbuildcommands{
@@ -79,12 +80,12 @@ project "Edtr"
 	dim = "%{prj.name}"
 
 	includedirs{
-		"GdEngine/Vendor/spdlog/include",
-		"GdEngine/src"
+		"Cndr/Vendor/spdlog/include",
+		"Cndr/src"
 	}
 
 	links{
-		"GdEngine"
+		"Cndr"
 	}
 
 	filter "system:windows"

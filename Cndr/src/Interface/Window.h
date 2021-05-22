@@ -5,7 +5,7 @@
 namespace Cndr
 {
 	// Windows Instance Class 
-	struct WindowProperties
+	struct CR_API WindowProperties
 	{
 		std::string Title;
 		unsigned int Width;

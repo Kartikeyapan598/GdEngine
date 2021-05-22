@@ -12,10 +12,10 @@ namespace Cndr
 		Vulcun
 	};
 
-	class RenderApi
+	class CR_API RenderApi
 	{
-	public :
-		virtual ~RenderApi();
+	public:
+		virtual ~RenderApi() {}
 
 		virtual void Init() = 0;
 		virtual void Clear() = 0;
@@ -27,8 +27,7 @@ namespace Cndr
 
 		RenderApi* GetRenderer(API m_api = API::DirectX);
 
-	private	:
-		static API m_api;
+	private:
+		static inline API m_api;
 	};
-
 }

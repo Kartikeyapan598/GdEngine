@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cndr/Interface/Thread.h"
+#include "C"
 
 int main(int argc, char** argv);
 
