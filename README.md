@@ -2,4 +2,4 @@
 
 
 
-Note not to use generate.bat to create .sln file as premake.lua is not complete yet. 
+Run Generate.bat to generate .sln file
